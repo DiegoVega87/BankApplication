@@ -19,20 +19,25 @@ public abstract class Account implements IBaseRate {
         System.out.println("Name: " + name + "\sSSN: " + SSN + "\sBalance: " + balance);
 
         //set account number
-        setAccountNumber(this.getClass().getSimpleName(), SSN);
-        System.out.println(accountNumber);
+        accountNumber = setAccountNumber(this.getClass().getSimpleName(), SSN);
+
+        System.out.println("Account Number: " +accountNumber);
     }
 
-    private void setAccountNumber(String accountType, String SSN){
+    private String setAccountNumber(String accountType, String SSN){
 
-        String twoSSNDigits = SSN.substring(SSN.length()-2);
+        // Get las two digits of SSN
+        String lastTwoSSNDigits = SSN.substring(SSN.length()-2);
+        // Generate a 3 digit random number
         Random random = new Random();
         int rDigits = random.nextInt(100, 900);
+        // Set the first Digit according to the account type
         int firstDigit = accountType.equalsIgnoreCase("savings") ? 1 : 2;
 
-        accountNumber = firstDigit + twoSSNDigits + digits + rDigits;
+        return firstDigit + lastTwoSSNDigits + digits++ + rDigits;
+
     }
-    public abstract boolean desposit(double amount);
+    public abstract boolean deposit(double amount);
     public abstract boolean withdraw(double amount);
 
     public abstract boolean transfer(String accountNumber, double amount);

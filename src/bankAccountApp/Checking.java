@@ -12,7 +12,7 @@ public class Checking extends Account{
     }
 
     @Override
-    public boolean desposit(double amount) {
+    public boolean deposit(double amount) {
         return false;
     }
 
