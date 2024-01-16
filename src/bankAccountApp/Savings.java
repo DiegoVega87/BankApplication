@@ -1,6 +1,9 @@
 package bankAccountApp;
 
 public class Savings extends Account{
+
+    private int safeDepositBoxID;
+    private int SafeDepositBoxKey;
     public Savings(String name, String SSN, double initialDeposit, String type) {
         super(name, SSN, initialDeposit, type);
     }

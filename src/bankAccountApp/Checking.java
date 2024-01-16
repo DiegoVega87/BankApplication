@@ -2,6 +2,10 @@ package bankAccountApp;
 
 public class Checking extends Account{
 
+    private int debitCardNumber;
+    private int cardPin;
+
+
 
     public Checking(String name,  String SSN, double initialDeposit, String type) {
         super(name, SSN, initialDeposit, type);
