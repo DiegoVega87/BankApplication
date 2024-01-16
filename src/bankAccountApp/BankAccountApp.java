@@ -9,5 +9,10 @@ public class BankAccountApp {
         System.out.println(chkcc1);
         System.out.println(savacc1);
 
+        System.out.println("******Operations:**********");
+        savacc1.deposit(5000);
+        savacc1.withdraw(200);
+        savacc1.transfer("Brokerage", 3000);
+
     }
 }

@@ -1,11 +1,12 @@
 package bankAccountApp;
 
+import java.sql.SQLOutput;
 import java.util.Random;
 
 public abstract class Account implements IBaseRate {
 
     private final String name;
-    private final double balance;
+    private double balance;
     private final String accountNumber;
     private static int digits = 10000;
     protected double rate;
@@ -34,11 +35,49 @@ public abstract class Account implements IBaseRate {
         return firstDigit + lastTwoSSNDigits + digits++ + rDigits;
 
     }
-    public abstract boolean deposit(double amount);
-    public abstract boolean withdraw(double amount);
+    public boolean deposit(double amount){
 
-    public abstract boolean transfer(String accountNumber, double amount);
+        if(amount < 1){
+            System.out.println("ERROR: Deposit must be >= $1 ");
+        }else{
+            System.out.println("Depositing $" + amount);
+            balance += amount;
+            System.out.println("Your balance is now: $" + getBalance());
+        }
+        return amount >= 1;
+    }
+    public boolean withdraw(double amount){
 
+        if(amount < 1){
+            System.out.println("ERROR: Withdrawal must be >= $1");
+        }else if(amount > balance){
+            System.out.println("Insufficient funds, your balance is: $" + balance);
+        }else{
+            System.out.println("Withdrawing $" + amount);
+            balance -= amount;
+            System.out.println("Your balance is now: $" + getBalance());
+        }
+
+        return (amount > 1 && amount < balance);
+    }
+
+    public boolean transfer(String recipientAccount, double amount){
+        if(amount < 1){
+            System.out.println("ERROR: Transfer must be >= $1");
+        }else if(amount > balance){
+            System.out.println("Insufficient funds, your balance is: $" + balance);
+        }else{
+            System.out.println("Transferring $" + amount + " to " + recipientAccount);
+            balance -= amount;
+            System.out.println("Your balance is now: $" + getBalance());
+        }
+
+        return (amount > 1 && amount < balance);
+    }
+
+    public double getBalance(){
+        return balance;
+    }
     @Override
     public String toString() {
         return  "\nName: " + name  +
