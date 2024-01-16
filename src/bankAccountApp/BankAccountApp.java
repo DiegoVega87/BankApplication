@@ -1,6 +1,5 @@
 package bankAccountApp;
 
-import java.util.Random;
 
 public class BankAccountApp {
 
