@@ -3,8 +3,8 @@ package bankAccountApp;
 public class Checking extends Account{
 
 
-    public Checking(String firstName, String lastName, String SSN, double initialDeposit, String type) {
-        super(firstName, lastName, SSN, initialDeposit, type);
+    public Checking(String name,  String SSN, double initialDeposit, String type) {
+        super(name, SSN, initialDeposit, type);
     }
 
     @Override

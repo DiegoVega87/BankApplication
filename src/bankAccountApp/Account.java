@@ -2,16 +2,16 @@ package bankAccountApp;
 
 public abstract class Account implements IBaseRate {
 
-    private String firstName;
-    private String lastName;
+    private String name;
     private String SSN;
+    private double balance;
     private double initialDeposit;
     private String accountNumber;
+    double rate;
     private String type;
 
-    public Account(String firstName, String lastName, String SSN, double initialDeposit, String type) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public Account(String name, String SSN, double initialDeposit, String type) {
+        this.name = name;
         this.SSN = SSN;
         this.initialDeposit = initialDeposit;
         this.type = type;
