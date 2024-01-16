@@ -5,16 +5,15 @@ public abstract class Account implements IBaseRate {
     private String name;
     private String SSN;
     private double balance;
-    private double initialDeposit;
     private String accountNumber;
     double rate;
-    private String type;
 
-    public Account(String name, String SSN, double initialDeposit, String type) {
+    public Account(String name, String SSN, double initialDeposit) {
         this.name = name;
         this.SSN = SSN;
-        this.initialDeposit = initialDeposit;
-        this.type = type;
+        balance = initialDeposit;
+
+        System.out.println("Name: " + name + "\sSSN: " + SSN + "\sBalance: " + balance);
     }
 
     public abstract boolean desposit(double amount);

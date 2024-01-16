@@ -7,8 +7,8 @@ public class Checking extends Account{
 
 
 
-    public Checking(String name,  String SSN, double initialDeposit, String type) {
-        super(name, SSN, initialDeposit, type);
+    public Checking(String name,  String SSN, double initialDeposit) {
+        super(name, SSN, initialDeposit);
     }
 
     @Override
