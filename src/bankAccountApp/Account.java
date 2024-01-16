@@ -8,7 +8,7 @@ public abstract class Account implements IBaseRate {
     private final double balance;
     private final String accountNumber;
     private static int digits = 10000;
-    double rate;
+    protected double rate;
 
     public Account(String name, String SSN, double initialDeposit) {
         this.name = name;
@@ -16,9 +16,11 @@ public abstract class Account implements IBaseRate {
 
         //set account number
         accountNumber = setAccountNumber(this.getClass().getSimpleName(), SSN);
+        setRate();
 
     }
 
+    public abstract void setRate();
     private String setAccountNumber(String accountType, String SSN){
 
         // Get las two digits of SSN
@@ -42,6 +44,7 @@ public abstract class Account implements IBaseRate {
         return  "\nName: " + name  +
                 "\nAccount Number: " + accountNumber  +
                 "\nBalance: $" + balance +
+                "\nInterest Rate: " + rate + "%" +
                 "\nAccount Type: " +  this.getClass().getSimpleName();
     }
 }
