@@ -39,7 +39,8 @@ public abstract class Account implements IBaseRate {
 
     @Override
     public String toString() {
-        return  "\nName: " + name  +
+        return  "\nAccount type: " +  this.getClass().getSimpleName() +
+                "\nName: " + name  +
                 "\nAccount Number: " + accountNumber  +
                 "\nBalance: $" + balance;
     }
