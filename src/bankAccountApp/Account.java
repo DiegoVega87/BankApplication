@@ -6,6 +6,7 @@ import java.util.Random;
 public abstract class Account implements IBaseRate {
 
     private final String name;
+    private String SSN;
     private double balance;
     private final String accountNumber;
     private static int digits = 10000;
@@ -13,6 +14,7 @@ public abstract class Account implements IBaseRate {
 
     public Account(String name, String SSN, double initialDeposit) {
         this.name = name;
+        this.SSN = SSN;
         balance = initialDeposit;
 
         //set account number
