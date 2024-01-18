@@ -89,7 +89,7 @@ public abstract class Account implements IBaseRate {
     }
     @Override
     public String toString() {
-        return  "\nName: " + name  +
+        return  "Name: " + name  +
                 "\nAccount Number: " + accountNumber  +
                 "\nBalance: $" + balance +
                 "\nInterest Rate: " + rate + "%" +
