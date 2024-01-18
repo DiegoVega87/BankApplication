@@ -19,8 +19,8 @@ public class Savings extends Account{
     private void setSafetyDepositBox(){
         Random random = new Random();
 
-        safetyDepositBoxID = random.nextInt(1000, 9999);
-        safetyDepositBoxKey = random.nextInt(100, 999);
+        safetyDepositBoxID = random.nextInt(100, 999);
+        safetyDepositBoxKey = random.nextInt(1000, 9999);
     }
 
     @Override
