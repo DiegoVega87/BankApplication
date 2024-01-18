@@ -1,5 +1,7 @@
 package bankAccountApp;
 
+import java.util.Random;
+
 public class Savings extends Account{
 
     private int safetyDepositBoxID;
@@ -15,8 +17,10 @@ public class Savings extends Account{
     }
 
     private void setSafetyDepositBox(){
-        safetyDepositBoxID = (int)(Math.random() * Math.pow(10,3));
-        safetyDepositBoxKey = (int)(Math.random() * Math.pow(10,4));
+        Random random = new Random();
+
+        safetyDepositBoxID = random.nextInt(1000, 9999);
+        safetyDepositBoxKey = random.nextInt(100, 999);
     }
 
     @Override
