@@ -1,6 +1,6 @@
 package bankAccountApp;
 
-import java.sql.SQLOutput;
+
 import java.util.Random;
 
 public abstract class Account implements IBaseRate {
@@ -38,7 +38,9 @@ public abstract class Account implements IBaseRate {
 
     public void compound(){
         double accruedInterest = balance * (rate/100);
+        balance += accruedInterest;
         System.out.println("Accrued Interest : $" + accruedInterest);
+        System.out.println("Your balance is now: $" + getBalance());
     }
     public boolean deposit(double amount){
 

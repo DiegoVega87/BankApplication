@@ -1,8 +1,10 @@
 package bankAccountApp;
 
+import java.util.Random;
+
 public class Checking extends Account{
 
-    private int debitCardNumber;
+    private long debitCardNumber;
     private int cardPin;
 
 
@@ -17,8 +19,9 @@ public class Checking extends Account{
     }
 
     private void setDebitCard(){
-        debitCardNumber = (int)(Math.random() * Math.pow(10, 12));
-        cardPin = (int)(Math.random() * Math.pow(10,4));
+        Random random = new Random();
+        debitCardNumber = random.nextLong(100000000000L, 999999999999L);
+        cardPin = random.nextInt(1000, 9999);
     }
 
     @Override
